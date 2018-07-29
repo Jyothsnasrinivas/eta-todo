@@ -6,7 +6,7 @@
 
 ## Running the web application
 
-A simple to-do web application in Eta using Spock web framework and Lucid DSL. Follow the below steps to play with the application.
+A simple to-do web application in Eta using [Spock web framework](https://www.spock.li/) and [Lucid DSL](http://hackage.haskell.org/package/lucid). Follow the below steps to play with the application.
 
 1) Fire up the terminal and enter the commands:
 
