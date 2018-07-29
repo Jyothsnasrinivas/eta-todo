@@ -4,28 +4,18 @@ module Main where
 import Web.Spock
 import Web.Spock.Config
 import Control.Monad (forM_)
-import Data.Monoid
 import Data.IORef
 import Data.Text
-import Control.Monad.IO.Class (liftIO, MonadIO)
+import Control.Monad.IO.Class (liftIO)
 import Web.Spock.Lucid (lucid)
 import Lucid
-import Data.Semigroup ((<>))
-import Web.HttpApiData
 
--- data MySession = EmptySession
--- data MyAppState = DummyAppState (IORef Int)
 type Server a = SpockM () () ServerState a
 
 newtype ServerState = ServerState { notes :: IORef [Note] }
 
 data Note = Note { author :: Text, contents :: Text }
 
--- main :: IO ()
--- main =
---     do ref <- newIORef 0
---        spockCfg <- defaultSpockCfg EmptySession PCNoDatabase (DummyAppState ref)
---        runSpock 8080 (spock spockCfg app)
 main :: IO ()
 main = do
   st <- ServerState <$>
@@ -69,13 +59,3 @@ app = do
     liftIO $ atomicModifyIORef' notesRef $ \notes ->
       (notes <> [Note author contents], ())
     redirect "/"
-
-
--- app :: SpockM () MySession MyAppState ()
--- app =
---     do get root $
---            text "Hello World!"
---        get ("hello" <//> var) $ \name ->
---            do (DummyAppState ref) <- getState
---               visitorNumber <- liftIO $ atomicModifyIORef' ref $ \i -> (i+1, i+1)
---               text ("Hello " <> name <> ", you are visitor number " <> T.pack (show visitorNumber))

@@ -23,8 +23,6 @@ executable eta-spock-example
   -- other-extensions:
   build-depends:     base >=4.8 && <4.9
                      , Spock >=0.11
-                     , http-types
-                     , http-api-data
                      , lucid
                      , Spock-lucid
                      , mtl
