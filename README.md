@@ -1,4 +1,4 @@
-<h1 align="center">Eta To-do</h1>
+<h1 align="center">Eta To-Do</h1>
 
 <p align="center">
   <img src="./resources/eta-todo.png" width="80%" />

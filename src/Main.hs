@@ -35,7 +35,7 @@ app = do
       title_ "Eta Spock Example"
       style_ [] ("body { background-color: #2cd4d9; } ul{ color: #ffffff;} " :: Text)
       style_ [] ("li { font-size: 18px; line-height: 1.6} " :: Text)
-      h1_ [id_ "notes-title",style_ "text-align: center; color: #ffffff; padding-top: 50px;}"] "Eta's To-Do"
+      h1_ [id_ "notes-title",style_ "text-align: center; color: #ffffff; padding-top: 50px;}"] "Eta To-Do"
       div_ ""
       (ul_ [id_ "header",style_ "background-color: #43414e; width: 400px; padding: 60px; margin: auto; border-radius: 10px; -webkit-box-shadow: 0 10px 6px -6px #777; -moz-box-shadow: 0 10px 6px -6px #777; box-shadow: 0 10px 6px -6px #777;"] $ forM_ notes' $ \note -> li_ $ do
         toHtml (author note)
@@ -51,7 +51,7 @@ app = do
           "Remarks:  "
           textarea_ [name_ "contents",rows_ "2",cols_ "18"] ""
         div_ ""
-        input_ [style_"margin-left: 170px; margin-top: 20px", type_ "submit", value_ "Add Note"]
+        input_ [style_"margin-left: 170px; margin-top: 20px", type_ "submit", value_ "Add To-Do"]
   post root $ do
     author <- param' "author"
     contents <- param' "contents"
