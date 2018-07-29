@@ -41,7 +41,7 @@ app = do
         toHtml (author note)
         ": "
         toHtml (contents note))
-      h2_ [id_ "new-note",style_ "color:white; text-align: center; padding-top: 30px;"] "Add New Note"
+      h2_ [id_ "new-note",style_ "color:white; text-align: center; padding-top: 30px;"] "Add New To-Do"
       form_ [style_"margin: auto; background-color: #43414e; width: 400px; padding: 60px; border-radius: 10px; -webkit-box-shadow: 0 10px 6px -6px #777; -moz-box-shadow: 0 10px 6px -6px #777; box-shadow: 0 10px 6px -6px #777;",method_ "post"] $ do
         label_ [style_"color: #ffffff; padding-left: 100px;"] $ do
           "Feature:  "
